@@ -325,6 +325,11 @@ export const mockOrders = {
           price: 30000,
         },
         {
+          menuName: "새우볶음밥",
+          quantity: 1,
+          price: 15000,
+        },
+        {
           menuName: "군만두",
           quantity: 1,
           price: 10000,

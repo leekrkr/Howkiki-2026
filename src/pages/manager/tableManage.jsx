@@ -1,12 +1,9 @@
 import { useState } from "react";
-
 import SideBar from "../../components/manager/SideBar";
 import Header from "../../components/manager/Header";
 import TableModal from "../../components/manager/TableModal";
-
 import useModal from "../../hooks/useModal";
 import { mockOrders } from "../../mock/OrderMock";
-
 import {
   Container,
   MainContainer,

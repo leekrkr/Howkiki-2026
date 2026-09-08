@@ -57,19 +57,32 @@ export const TableNumber = styled.span`
 export const MenuList = styled.div`
   width: 100%;
 
-  overflow: hidden;
+  max-height: calc(88px * 3);
+  overflow-y: auto;
 
   background: #f1f3f5;
+
   border-radius: 20px;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const MenuItem = styled.div`
   width: 100%;
+
   height: 88px;
+  min-height: 88px;
+
   padding: 0 32px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   border-bottom: 1px solid #fff;
