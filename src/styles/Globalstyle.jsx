@@ -8,6 +8,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
+// font
   @font-face {
     font-family: "SUIT";
     src: url(${SuitLight}) format("woff2");
