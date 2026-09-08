@@ -1,0 +1,173 @@
+import { useState, useEffect } from "react";
+import useModal from "../../hooks/useModal";
+import CancelModal from "../../components/manager/CancelModal";
+import OrderDetailModal from "../../components/manager/OrderDetailModal";
+import SideBar from "../../components/manager/SideBar";
+import Header from "../../components/manager/Header";
+import OrderCard from "../../components/manager/OrderCard";
+import arrowIcon1 from "../../assets/icons/arrow1.svg";
+import arrowIcon2 from "../../assets/icons/arrow2.svg";
+import { mockOrders } from "../../mock/OrderMock";
+import {
+  Container,
+  MainContainer,
+  ListContainer,
+  Title,
+  FilterRow,
+  FilterContainer,
+  FilterButton,
+  PageArrowContainer,
+  ArrowButton,
+  OrderContainer,
+  LoaderWrap,
+} from "../../styles/manager/order.module";
+
+export default function OrderPreparingPage() {
+  const [orderData, setOrderData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [selectedOrder, setSelectedOrder] = useState(null);
+  const [detailOrder, setDetailOrder] = useState(null);
+
+  const {
+    isOpen: isCancelOpen,
+    openModal: openCancelModal,
+    closeModal: closeCancelModal,
+  } = useModal();
+
+  const {
+    isOpen: isDetailOpen,
+    openModal: openDetailModal,
+    closeModal: closeDetailModal,
+  } = useModal();
+
+  const fetchOrderData = async () => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
+      const sortedOrders = [...mockOrders.data]
+        .filter(
+          (order) => order.status === "PREPARING" && order.isTakeOut === false,
+        )
+        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+      setOrderData({
+        ...mockOrders,
+        data: sortedOrders,
+      });
+    } catch (error) {
+      console.error("주문 데이터 가져오기 실패:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrderData();
+  }, []);
+
+  const handleCancel = (orderId) => {
+    setOrderData((prev) => ({
+      ...prev,
+      data: prev.data.filter((order) => order.orderId !== orderId),
+    }));
+  };
+
+  const handleComplete = (orderId) => {
+    setOrderData((prev) => ({
+      ...prev,
+      data: prev.data.filter((order) => order.orderId !== orderId),
+    }));
+  };
+
+  const handleOpenCancelModal = (order) => {
+    setSelectedOrder(order);
+    openCancelModal();
+  };
+
+  const handleCloseCancelModal = () => {
+    setSelectedOrder(null);
+    closeCancelModal();
+  };
+
+  const handleConfirmCancel = ({ reason, menus }) => {
+    if (!selectedOrder) return;
+
+    console.log("취소 사유:", reason);
+    console.log("재료 소진 메뉴:", menus);
+
+    handleCancel(selectedOrder.orderId);
+    handleCloseCancelModal();
+  };
+
+  const handleOpenDetailModal = (order) => {
+    setDetailOrder(order);
+    openDetailModal();
+  };
+
+  const handleCloseDetailModal = () => {
+    setDetailOrder(null);
+    closeDetailModal();
+  };
+
+  return (
+    <>
+      <Container>
+        <SideBar />
+        <MainContainer>
+          <Header />
+          <ListContainer>
+            <Title>주문</Title>
+            <FilterRow>
+              <FilterContainer>
+                <FilterButton to="/1/waiting">주문 대기</FilterButton>
+                <FilterButton to="/1/preparing" $active>
+                  조리 중
+                </FilterButton>
+                <FilterButton to="/1/completeorder">판매 내역</FilterButton>
+                <FilterButton to="/1/fullorder">주문 조회</FilterButton>
+              </FilterContainer>
+              <PageArrowContainer>
+                <ArrowButton>
+                  <img src={arrowIcon1} alt="" />
+                </ArrowButton>
+                <ArrowButton>
+                  <img src={arrowIcon2} alt="" />
+                </ArrowButton>
+              </PageArrowContainer>
+            </FilterRow>
+            <OrderContainer>
+              {isLoading ? (
+                <LoaderWrap>로딩중...</LoaderWrap>
+              ) : (
+                orderData?.data.map((order) => (
+                  <OrderCard
+                    key={order.orderId}
+                    order={order}
+                    rightButtonText="완료"
+                    onCardClick={() => handleOpenDetailModal(order)}
+                    onCancel={() => handleOpenCancelModal(order)}
+                    onRightClick={() => handleComplete(order.orderId)}
+                  />
+                ))
+              )}
+            </OrderContainer>
+          </ListContainer>
+        </MainContainer>
+      </Container>
+      {isCancelOpen && selectedOrder && (
+        <CancelModal
+          order={selectedOrder}
+          onClose={handleCloseCancelModal}
+          onConfirm={handleConfirmCancel}
+        />
+      )}
+      {isDetailOpen && detailOrder && (
+        <OrderDetailModal
+          order={detailOrder}
+          onClose={handleCloseDetailModal}
+        />
+      )}
+    </>
+  );
+}
