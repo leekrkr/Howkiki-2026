@@ -85,7 +85,7 @@ export const TableBox = styled.div`
   background: #fff;
 
   border: ${({ $active }) =>
-    $active ? "2px solid #4696FF" : "1.5px solid transparent"};
+    $active ? "1.5px solid #4696FF" : "1.5px solid transparent"};
 
   border-radius: 34px;
 
