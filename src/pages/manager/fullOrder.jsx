@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import useModal from "../../hooks/useModal";
 import OrderDetailModal from "../../components/manager/OrderDetailModal";
+import PeriodFilterModal from "../../components/manager/PeriodFilterModal";
 import SideBar from "../../components/manager/SideBar";
 import Header from "../../components/manager/Header";
 import OrderCard from "../../components/manager/OrderCard";
@@ -28,7 +29,7 @@ import {
 export default function FullOrderPage() {
   const [orderData, setOrderData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
+  const [isPeriodOpen, setIsPeriodOpen] = useState(false);
   const [detailOrder, setDetailOrder] = useState(null);
 
   const {
@@ -93,7 +94,7 @@ export default function FullOrderPage() {
               </FilterContainer>
               <ArrowContainer>
                 <ArrayContainer>
-                  <ArrayButton>
+                  <ArrayButton onClick={() => setIsPeriodOpen(true)}>
                     기간 <img src={arrowDownIcon} alt="" />
                   </ArrayButton>
                   <ArrayButton>
@@ -132,6 +133,14 @@ export default function FullOrderPage() {
           onClose={handleCloseDetailModal}
         />
       )}
+      <PeriodFilterModal
+        isOpen={isPeriodOpen}
+        onClose={() => setIsPeriodOpen(false)}
+        onSearch={(value) => {
+          console.log(value);
+          setIsPeriodOpen(false);
+        }}
+      />
     </>
   );
 }
