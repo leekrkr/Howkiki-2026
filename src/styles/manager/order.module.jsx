@@ -54,13 +54,13 @@ export const FilterRow = styled.div`
 export const FilterContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 `;
 
 export const FilterButton = styled(Link)`
-  height: 40px;
+  height: 38px;
 
-  padding: 0 18px;
+  padding: 0 14px;
 
   display: flex;
   align-items: center;

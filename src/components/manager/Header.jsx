@@ -9,9 +9,20 @@ import {
   Bell,
 } from "../../styles/components/header.module";
 
+const formatDate = (date) => {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  return `${year}년 ${month}월 ${day}일`;
+};
+
 export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const today = new Date();
+  const todayText = formatDate(today);
 
   const headerTabPaths = [
     "/1/waiting",
@@ -54,7 +65,7 @@ export default function Header() {
         <div />
       )}
       <RightInfo>
-        <DateText>2025년 2월 13일</DateText>
+        <DateText>{todayText}</DateText>
         <Bell>
           <img src={alarmIcon} alt="알림" />
         </Bell>
