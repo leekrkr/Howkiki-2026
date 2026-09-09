@@ -37,7 +37,6 @@ export const Title = styled.h1`
 
   color: #3d91ff;
 
-  font-family: "HowkikiFont", sans-serif;
   font-size: clamp(26px, 2vw, 32px);
   font-weight: 500;
   line-height: 1.2;
@@ -79,20 +78,10 @@ export const ModeButton = styled.button`
 
   cursor: pointer;
 
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-
   &:hover {
     background: #e2efff;
     border-color: #4097ff;
     color: #4097ff;
-  }
-
-  &:active {
-    transform: scale(0.98);
   }
 
   @media (max-width: 480px) {
