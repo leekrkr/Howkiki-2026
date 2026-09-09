@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HowkikiPage from "./pages/howkiki";
 import StartPage from "./pages/manager/start";
 import OrderWaitingPage from "./pages/manager/orderWaiting";
 import OrderPreparingPage from "./pages/manager/orderPreparing";
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<HowkikiPage />} />
         <Route path="/1" element={<StartPage />} />
         <Route path="/1/waiting" element={<OrderWaitingPage />} />
         <Route path="/1/preparing" element={<OrderPreparingPage />} />
