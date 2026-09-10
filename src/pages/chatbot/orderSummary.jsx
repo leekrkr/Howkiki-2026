@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import closeIcon from "../../assets/icons/close.svg";
+import OrderSummaryCard from "../../components/chatbot/OrderSummaryCard";
 import {
   Page,
   Container,
@@ -13,21 +14,6 @@ import {
   TotalLabel,
   TotalPrice,
   OrderList,
-  OrderCard,
-  OrderTop,
-  StatusBadge,
-  CancelButton,
-  OrderNumber,
-  MenuList,
-  MenuRow,
-  MenuInfo,
-  MenuName,
-  MenuPrice,
-  MenuQuantity,
-  CardDivider,
-  OrderTotalRow,
-  OrderTotalLabel,
-  OrderTotalPrice,
 } from "../../styles/chatbot/orderSummary.module";
 
 const orders = [
@@ -108,45 +94,9 @@ export default function OrderSummaryPage() {
           <TotalPrice>{formatPrice(totalPrice)}원</TotalPrice>
         </TotalSummary>
         <OrderList>
-          {orders.map((order) => {
-            const orderTotal = getOrderTotal(order.menus);
-
-            return (
-              <OrderCard key={order.orderId}>
-                <OrderTop>
-                  <StatusBadge>{order.status}</StatusBadge>
-
-                  <CancelButton
-                    $disabled={!order.cancelable}
-                    disabled={!order.cancelable}
-                  >
-                    주문 취소
-                  </CancelButton>
-                </OrderTop>
-                <OrderNumber>
-                  주문 번호 {String(order.orderId).padStart(2, "0")}
-                </OrderNumber>
-                <CardDivider />
-                <MenuList>
-                  {order.menus.map((menu, index) => (
-                    <MenuRow key={index}>
-                      <MenuInfo>
-                        <MenuName>{menu.name}</MenuName>
-                        <MenuPrice>{formatPrice(menu.price)}원</MenuPrice>
-                      </MenuInfo>
-
-                      <MenuQuantity>{menu.quantity}개</MenuQuantity>
-                    </MenuRow>
-                  ))}
-                </MenuList>
-                <CardDivider />
-                <OrderTotalRow>
-                  <OrderTotalLabel>주문 금액</OrderTotalLabel>
-                  <OrderTotalPrice>{formatPrice(orderTotal)}원</OrderTotalPrice>
-                </OrderTotalRow>
-              </OrderCard>
-            );
-          })}
+          {orders.map((order) => (
+            <OrderSummaryCard key={order.orderId} order={order} />
+          ))}
         </OrderList>
       </Container>
     </Page>

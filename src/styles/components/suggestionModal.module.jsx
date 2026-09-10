@@ -34,7 +34,7 @@ export const ContentBox = styled.div`
 
   padding: 30px 36px 56px;
 
-  background: #f1f4f8;
+  background: #f1f4f7;
   border-radius: 32px;
 `;
 
@@ -45,7 +45,7 @@ export const SuggestionText = styled.div`
   font-weight: 400;
   line-height: 1.7;
 
-  color: #111;
+  color: #0a0a0b;
 
   white-space: pre-wrap;
   word-break: keep-all;
@@ -62,7 +62,7 @@ export const DateText = styled.div`
   font-size: 15px;
   font-weight: 400;
 
-  color: #777;
+  color: #6c6e71;
 `;
 
 export const CloseButton = styled.button`
@@ -77,14 +77,12 @@ export const CloseButton = styled.button`
   background: #fff;
   color: #6c6e71;
 
-  color: #777;
-
   font-size: 17px;
   font-weight: 500;
 
   cursor: pointer;
 
   &:hover {
-    color: #4696ff;
+    color: #4097ff;
   }
 `;

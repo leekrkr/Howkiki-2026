@@ -40,14 +40,14 @@ export const ModalTitle = styled.h3`
   font-size: 18px;
   font-weight: 500;
 
-  color: #777;
+  color: #6c6e71;
 `;
 
 export const TableNumber = styled.span`
   font-size: 18px;
   font-weight: 500;
 
-  color: #4696ff;
+  color: #4097ff;
 `;
 
 export const TimeContainer = styled.div`
@@ -64,14 +64,22 @@ export const TimeButton = styled.button`
 
   border-radius: 20px;
 
-  background: ${({ $active }) => ($active ? "#e2efff" : "#f1f3f5")};
+  background: ${({ $active }) => ($active ? "#e2efff" : "#F1F4F7")};
 
-  color: ${({ $active }) => ($active ? "#4696ff" : "#111")};
+  color: ${({ $active }) => ($active ? "#4097FF" : "#0A0A0B")};
 
   font-size: 20px;
   font-weight: 500;
 
   cursor: pointer;
+
+  ${({ $active }) =>
+    !$active &&
+    `
+      &:hover {
+        background: #E0E3E6;
+      }
+    `}
 `;
 
 export const TimeInputBox = styled.div`
@@ -83,7 +91,7 @@ export const TimeInputBox = styled.div`
 
   padding: 0 20px;
 
-  border: 1px solid #e8e8e9;
+  border: 1px solid #d0d1d2;
   border-radius: 18px;
 
   background: #fff;
@@ -122,7 +130,7 @@ export const TimeUnit = styled.span`
 
   font-size: 18px;
   font-weight: 500;
-  color: #555;
+  color: #6c6e71;
 
   pointer-events: none;
 `;
@@ -151,7 +159,7 @@ export const CancelButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    color: #4696ff;
+    color: #4097ff;
   }
 `;
 
@@ -162,7 +170,7 @@ export const CompleteButton = styled.button`
   border: 0;
   border-radius: 16px;
 
-  background: ${({ disabled }) => (disabled ? "#B3D5FF" : "#4696ff")};
+  background: ${({ disabled }) => (disabled ? "#B3D5FF" : "#4097FF")};
 
   color: #fff;
 

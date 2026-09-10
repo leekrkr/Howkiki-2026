@@ -46,7 +46,7 @@ export const CloseButton = styled.button`
   font-weight: 300;
   line-height: 1;
 
-  color: #111;
+  color: #0a0a0b;
 
   cursor: pointer;
 `;
@@ -62,14 +62,14 @@ export const HeaderTitle = styled.h1`
   font-size: 17px;
   font-weight: 600;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const Divider = styled.div`
   width: 100%;
   height: 1px;
 
-  background: #dedede;
+  background: #d8d8d8;
 `;
 
 export const TableText = styled.div`
@@ -80,7 +80,7 @@ export const TableText = styled.div`
   font-size: 15px;
   font-weight: 500;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const TotalSummary = styled.div`
@@ -91,7 +91,7 @@ export const TotalSummary = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  border: 1px solid #d9d9d9;
+  border: 1px solid #d8d8d8;
   border-radius: 16px;
 
   background: #fff;
@@ -101,14 +101,14 @@ export const TotalLabel = styled.div`
   font-size: 16px;
   font-weight: 600;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const TotalPrice = styled.div`
   font-size: 16px;
   font-weight: 600;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const OrderList = styled.div`
@@ -122,7 +122,7 @@ export const OrderList = styled.div`
 export const OrderCard = styled.div`
   padding: 20px;
 
-  border: 1px solid #d9d9d9;
+  border: 1px solid #d8d8d8;
   border-radius: 16px;
 
   background: #fff;
@@ -141,7 +141,7 @@ export const StatusBadge = styled.div`
 
   border-radius: 999px;
 
-  background: #eaf4ff;
+  background: #e2efff;
 
   font-size: 13px;
   font-weight: 500;
@@ -152,7 +152,7 @@ export const StatusBadge = styled.div`
 export const CancelButton = styled.button`
   padding: 8px 10px;
 
-  border: 1px solid ${({ $disabled }) => ($disabled ? "#d8d8d8" : "#4097ff")};
+  border: 1px solid ${({ $disabled }) => ($disabled ? "#D0D1D2" : "#4097ff")};
   border-radius: 999px;
 
   background: #fff;
@@ -160,7 +160,7 @@ export const CancelButton = styled.button`
   font-size: 13px;
   font-weight: 500;
 
-  color: ${({ $disabled }) => ($disabled ? "#b8b8b8" : "#4097ff")};
+  color: ${({ $disabled }) => ($disabled ? "#A2A3A5" : "#4097ff")};
 
   cursor: ${({ $disabled }) => ($disabled ? "default" : "pointer")};
 `;
@@ -172,14 +172,14 @@ export const OrderNumber = styled.div`
   font-size: 16px;
   font-weight: 600;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const CardDivider = styled.div`
   width: 100%;
   height: 1px;
 
-  background: #dddddd;
+  background: #d8d8d8;
 `;
 
 export const MenuList = styled.div`
@@ -195,7 +195,7 @@ export const MenuRow = styled.div`
   justify-content: space-between;
 
   & + & {
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #d8d8d8;
   }
 `;
 
@@ -209,21 +209,21 @@ export const MenuName = styled.div`
   font-size: 14px;
   font-weight: 400;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const MenuPrice = styled.div`
   font-size: 14px;
   font-weight: 400;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const MenuQuantity = styled.div`
   font-size: 14px;
   font-weight: 400;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const OrderTotalRow = styled.div`
@@ -238,12 +238,12 @@ export const OrderTotalLabel = styled.div`
   font-size: 16px;
   font-weight: 600;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const OrderTotalPrice = styled.div`
   font-size: 16px;
   font-weight: 600;
 
-  color: #111;
+  color: #0a0a0b;
 `;

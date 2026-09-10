@@ -30,7 +30,7 @@ export const TableNumber = styled.div`
 
   font-size: 20px;
   font-weight: 500;
-  color: #4696ff;
+  color: #4097ff;
 `;
 
 export const OrderList = styled.div`
@@ -40,10 +40,9 @@ export const OrderList = styled.div`
 
   overflow-y: auto;
 
-  border: 1px solid #e1e4e8;
+  border: 1px solid #f1f4f7;
   border-radius: 28px;
 
-  /* 스크롤바 숨기기 */
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
@@ -59,12 +58,12 @@ export const EmptyOrder = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: #f1f3f5;
+  background: #f1f4f7;
   border-radius: 28px;
 
   font-size: 18px;
   font-weight: 400;
-  color: #777;
+  color: #6c6e71;
 `;
 
 export const OrderGroup = styled.div`
@@ -82,7 +81,7 @@ export const OrderNumber = styled.div`
 
   font-size: 16px;
   font-weight: 500;
-  color: #555;
+  color: #0a0a0b;
 `;
 
 export const MenuItem = styled.div`
@@ -95,7 +94,7 @@ export const MenuItem = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  background: #f1f3f5;
+  background: #f1f4f7;
   border-bottom: 1px solid #fff;
 
   &:last-child {
@@ -106,13 +105,13 @@ export const MenuItem = styled.div`
 export const MenuName = styled.span`
   font-size: 18px;
   font-weight: 500;
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const MenuInfo = styled.span`
   font-size: 17px;
   font-weight: 400;
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const TotalContainer = styled.div`
@@ -126,13 +125,13 @@ export const TotalContainer = styled.div`
 export const TotalLabel = styled.span`
   font-size: 20px;
   font-weight: 600;
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const TotalPrice = styled.span`
   font-size: 20px;
   font-weight: 600;
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const ButtonContainer = styled.div`
@@ -161,7 +160,7 @@ export const CloseButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    color: #4696ff;
+    color: #4097ff;
   }
 `;
 
@@ -172,7 +171,7 @@ export const CompleteButton = styled.button`
   border: 0;
   border-radius: 16px;
 
-  background: #4696ff;
+  background: #4097ff;
   color: #fff;
 
   font-size: 17px;

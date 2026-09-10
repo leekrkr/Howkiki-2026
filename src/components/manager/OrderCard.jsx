@@ -12,7 +12,7 @@ import {
   OrderCancelBtn,
   OrderOkBtn,
   OrderDate,
-} from "../../styles/manager/order.module";
+} from "../../styles/components/orderCard.module";
 
 export default function OrderCard({
   order,

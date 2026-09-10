@@ -32,7 +32,7 @@ export const ModalHeader = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e8e8e9;
 `;
 
 export const ModalTitle = styled.h2`
@@ -41,7 +41,7 @@ export const ModalTitle = styled.h2`
   font-size: 22px;
   font-weight: 500;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const CloseButton = styled.button`
@@ -62,7 +62,7 @@ export const CloseButton = styled.button`
   font-weight: 300;
   line-height: 1;
 
-  color: #222;
+  color: #0a0a0b;
 
   cursor: pointer;
 `;
@@ -88,7 +88,7 @@ export const SectionTitle = styled.div`
   font-size: 18px;
   font-weight: 600;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const PeriodButtons = styled.div`
@@ -97,7 +97,7 @@ export const PeriodButtons = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  border: 1px solid #d6d6d6;
+  border: 1px solid #d0d1d2;
   border-radius: 12px;
 
   overflow: hidden;
@@ -107,14 +107,14 @@ export const PeriodButton = styled.button`
   height: 54px;
 
   border: none;
-  border-right: 1px solid #d6d6d6;
+  border-right: 1px solid #d0d1d2;
 
-  background: ${({ $active }) => ($active ? "#f1f4f8" : "#fff")};
+  background: ${({ $active }) => ($active ? "#E2EFFF" : "#fff")};
 
   font-size: 17px;
   font-weight: ${({ $active }) => ($active ? 500 : 400)};
 
-  color: ${({ $active }) => ($active ? "#4097ff" : "#555")};
+  color: ${({ $active }) => ($active ? "#4097ff" : "#505254")};
 
   cursor: pointer;
 
@@ -133,7 +133,7 @@ export const DateRangeBox = styled.div`
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
 
-  border: 1px solid #d6d6d6;
+  border: 1px solid #d0d1d2;
   border-radius: 12px;
 
   background: #fff;
@@ -161,7 +161,7 @@ export const DateText = styled.span`
   font-weight: 400;
   line-height: 1;
 
-  color: ${({ $active }) => ($active ? "#4097ff" : "#555")};
+  color: ${({ $active }) => ($active ? "#4097ff" : "#505254")};
 `;
 
 export const RangeDivider = styled.div`
@@ -169,7 +169,7 @@ export const RangeDivider = styled.div`
 
   font-size: 18px;
 
-  color: #555;
+  color: #505254;
 `;
 
 export const ModalFooter = styled.div`
@@ -179,14 +179,14 @@ export const ModalFooter = styled.div`
   justify-content: center;
   gap: 16px;
 
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e8e8e9;
 `;
 
 export const ResetButton = styled.button`
   width: 432px;
   height: 60px;
 
-  border: 1px solid #d6d6d6;
+  border: 1px solid #d0d1d2;
   border-radius: 18px;
 
   background: #fff;
@@ -194,12 +194,12 @@ export const ResetButton = styled.button`
   font-size: 18px;
   font-weight: 500;
 
-  color: #555;
+  color: #505254;
 
   cursor: pointer;
 
   &:hover {
-    color: #4696ff;
+    color: #4097ff;
   }
 `;
 

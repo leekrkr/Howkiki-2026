@@ -51,7 +51,7 @@ export const HeaderTitle = styled.div`
   font-size: 16px;
   font-weight: 700;
 
-  color: #4696ff;
+  color: #4097ff;
 `;
 
 export const ChatArea = styled.div`
@@ -118,7 +118,7 @@ export const BotBubble = styled.div`
   font-weight: 400;
   line-height: 1.55;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const UserBubble = styled.div`
@@ -129,7 +129,7 @@ export const UserBubble = styled.div`
 
   border-radius: 22px 22px 0 22px;
 
-  background: #4696ff;
+  background: #4097ff;
 
   font-size: 14px;
   font-weight: 400;
@@ -142,7 +142,7 @@ export const MessageTime = styled.div`
   font-size: 11px;
   font-weight: 400;
 
-  color: #777;
+  color: #505254;
 
   align-self: ${({ $isUser }) => ($isUser ? "flex-end" : "flex-start")};
 `;
@@ -192,7 +192,7 @@ export const OrderButton = styled.button`
   border: none;
   border-radius: 50%;
 
-  background: #dfe3e7;
+  background: #e0e3e6;
 
   cursor: pointer;
 `;
@@ -228,10 +228,10 @@ export const Input = styled.input`
   font-size: 14px;
   font-weight: 400;
 
-  color: #111;
+  color: #0a0a0b;
 
   &::placeholder {
-    color: #aaa;
+    color: #a2a3a5;
   }
 `;
 
@@ -248,7 +248,7 @@ export const SendButton = styled.button`
   border: 0;
   border-radius: 50%;
 
-  background: #4696ff;
+  background: #4097ff;
 
   cursor: pointer;
 `;

@@ -37,7 +37,7 @@ export const LogoText = styled.div`
   font-size: 30px;
   font-weight: 700;
 
-  color: #4696ff;
+  color: #4097ff;
 `;
 
 export const LoginSection = styled.section`
@@ -48,7 +48,7 @@ export const LoginSection = styled.section`
   align-items: center;
   justify-content: center;
 
-  background: #f1f4f8;
+  background: #f1f4f7;
 `;
 
 export const LoginBox = styled.div`
@@ -58,11 +58,11 @@ export const LoginBox = styled.div`
 export const LoginTitle = styled.h1`
   margin: 0 0 12px;
 
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 600;
   line-height: 1.3;
 
-  color: #4696ff;
+  color: #4097ff;
 `;
 
 export const LoginDescription = styled.p`
@@ -71,7 +71,7 @@ export const LoginDescription = styled.p`
   font-size: 15px;
   font-weight: 400;
 
-  color: #777;
+  color: #6c6e71;
 `;
 
 export const LoginForm = styled.form`
@@ -96,16 +96,16 @@ export const Input = styled.input`
 
   font-size: 15px;
   font-weight: 400;
-  color: #111;
+  color: #0a0a0b;
 
   outline: none;
 
   &::placeholder {
-    color: #aaa;
+    color: #a2a3a5;
   }
 
   &:focus {
-    border-color: #4696ff;
+    border-color: #4097ff;
   }
 `;
 
@@ -118,7 +118,7 @@ export const LoginButton = styled.button`
   border: 0;
   border-radius: 14px;
 
-  background: #4696ff;
+  background: #4097ff;
 
   font-size: 16px;
   font-weight: 600;
@@ -127,7 +127,7 @@ export const LoginButton = styled.button`
   cursor: pointer;
 
   &:disabled {
-    opacity: 0.5;
+    background: #b3d5ff;
     cursor: default;
   }
 `;

@@ -40,7 +40,7 @@ export const LogoCircle = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: #4295ff;
+  color: #4097ff;
   font-size: 28px;
   font-weight: 700;
 `;
@@ -48,7 +48,7 @@ export const LogoCircle = styled.div`
 export const LogoText = styled.div`
   font-size: 22px;
   font-weight: 700;
-  color: #171717;
+  color: #0a0a0b;
 `;
 
 export const StoreName = styled.div`
@@ -57,7 +57,7 @@ export const StoreName = styled.div`
 
   font-size: 19px;
   font-weight: 600;
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const MenuArea = styled.div`
@@ -82,13 +82,13 @@ export const SideBarLink = styled.div`
 
   cursor: pointer;
 
-  background: ${(props) => (props.selected ? "#4295ff" : "transparent")};
-  color: ${(props) => (props.selected ? "#fff" : "#818181")};
+  background: ${(props) => (props.selected ? "#4097ff" : "transparent")};
+  color: ${(props) => (props.selected ? "#fff" : "#6C6E71")};
 
   transition: 0.2s;
 
   &:hover {
-    background: ${(props) => (props.selected ? "#4295ff" : "#f5f5f5")};
+    background: ${(props) => (props.selected ? "#4097ff" : "#f5f5f5")};
   }
 `;
 
@@ -111,9 +111,9 @@ export const SettingButton = styled.div`
 
   padding: 0 46px;
 
-  border-top: 1px solid #eee;
+  border-top: 1px solid #f1f4f7;
 
-  color: #818181;
+  color: #6c6e71;
   cursor: pointer;
 
   img {
@@ -161,7 +161,7 @@ export const UserName = styled.span`
 
   font-size: 17px;
   font-weight: 500;
-  color: #222;
+  color: #0a0a0b;
 
   white-space: nowrap;
   overflow: hidden;

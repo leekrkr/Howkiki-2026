@@ -10,7 +10,7 @@ export const TopBar = styled.header`
 
   padding: 0 46px;
 
-  background: #f1f4f8;
+  background: #f1f4f7;
   border-bottom: 1px solid #fff;
 `;
 
@@ -33,10 +33,10 @@ export const OrderTypeTab = styled.button`
   border: 0;
   background: transparent;
 
-  color: ${({ $active }) => ($active ? "#111" : "#a5a5a5")};
+  color: ${({ $active }) => ($active ? "#0A0A0B" : "#A2A3A5")};
 
   font-size: 18px;
-  font-weight: ${({ $active }) => ($active ? 600 : 500)};
+  font-weight: ${({ $active }) => ($active ? 500 : 500)};
 
   cursor: pointer;
 
@@ -50,21 +50,21 @@ export const OrderTypeTab = styled.button`
     width: 100%;
     height: 3px;
 
-    background: ${({ $active }) => ($active ? "#4696ff" : "transparent")};
+    background: ${({ $active }) => ($active ? "#4097ff" : "transparent")};
   }
 `;
 
 export const RightInfo = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 `;
 
 export const DateText = styled.span`
   font-size: 17px;
   font-weight: 500;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const Bell = styled.div`

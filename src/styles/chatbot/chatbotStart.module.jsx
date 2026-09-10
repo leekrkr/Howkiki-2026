@@ -51,7 +51,7 @@ export const LogoText = styled.div`
   font-size: 24px;
   font-weight: 700;
 
-  color: #4696ff;
+  color: #4097ff;
 `;
 
 export const Button = styled.button`
@@ -72,7 +72,7 @@ export const Button = styled.button`
   font-size: 15px;
   font-weight: 500;
 
-  color: #4696ff;
+  color: #4097ff;
 
   cursor: pointer;
 `;

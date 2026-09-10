@@ -41,17 +41,17 @@ export const OrderTitle = styled.div`
 
   font-size: 18px;
   font-weight: 500;
-  color: #777;
+  color: #6c6e71;
 `;
 
 export const OrderNumber = styled.span`
-  color: #4696ff;
+  color: #4097ff;
 `;
 
 export const TableNumber = styled.span`
   font-size: 18px;
   font-weight: 500;
-  color: #4696ff;
+  color: #4097ff;
 `;
 
 export const MenuList = styled.div`
@@ -60,7 +60,7 @@ export const MenuList = styled.div`
   max-height: calc(88px * 3);
   overflow-y: auto;
 
-  background: #f1f3f5;
+  background: #f1f4f7;
 
   border-radius: 20px;
 
@@ -95,13 +95,13 @@ export const MenuItem = styled.div`
 export const MenuName = styled.span`
   font-size: 18px;
   font-weight: 500;
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const MenuQuantity = styled.span`
   font-size: 18px;
   font-weight: 400;
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const CloseButton = styled.button`
@@ -122,6 +122,6 @@ export const CloseButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    color: #4696ff;
+    color: #4097ff;
   }
 `;

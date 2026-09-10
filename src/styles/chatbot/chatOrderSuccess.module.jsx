@@ -68,7 +68,7 @@ export const SuccessText = styled.p`
   font-weight: 500;
   line-height: 1.4;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const BackButton = styled.button`
@@ -79,7 +79,7 @@ export const BackButton = styled.button`
   border: none;
   border-radius: 14px;
 
-  background: #dfe3e7;
+  background: #e0e3e6;
 
   font-size: 16px;
   font-weight: 500;

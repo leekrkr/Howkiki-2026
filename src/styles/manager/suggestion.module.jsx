@@ -6,7 +6,7 @@ export const Container = styled.section`
 
   display: flex;
 
-  background: #f1f4f8;
+  background: #f1f4f7;
 `;
 
 export const MainContainer = styled.main`
@@ -29,7 +29,7 @@ export const Title = styled.h2`
   font-weight: 600;
   line-height: 1;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const ArrayRow = styled.div`
@@ -58,12 +58,12 @@ export const ArrayButton = styled.button`
   justify-content: center;
   gap: 4px;
 
-  border: 1px solid #999;
+  border: 1px solid #505254;
   border-radius: 999px;
 
   background: transparent;
 
-  color: #555;
+  color: #505254;
   font-size: 14px;
   font-weight: 400;
 
@@ -95,7 +95,7 @@ export const SortPopup = styled.div`
 
   background: #fff;
 
-  border: 1px solid #e5e5e5;
+  border: 1px solid #e8e8e9;
   border-radius: 12px;
 
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -140,11 +140,11 @@ export const ArrowButton = styled.button`
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #e2e5e9;
+  border: 1px solid #e8e8e9;
   border-radius: 50%;
 
   background: #fff;
-  color: #c6c9cd;
+  color: #d0d1d2;
 
   font-size: 24px;
   font-weight: 300;
@@ -188,7 +188,7 @@ export const SuggestionText = styled.p`
   font-weight: 400;
   line-height: 1.6;
 
-  color: #111;
+  color: #0a0a0b;
 
   white-space: pre-line;
 
@@ -207,5 +207,5 @@ export const SuggestionDate = styled.span`
   font-size: 14px;
   font-weight: 400;
 
-  color: #777;
+  color: #6c6e71;
 `;

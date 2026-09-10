@@ -40,14 +40,14 @@ export const ModalTitle = styled.h3`
   font-size: 18px;
   font-weight: 500;
 
-  color: #777;
+  color: #6c6e71;
 `;
 
 export const TableNumber = styled.span`
   font-size: 18px;
   font-weight: 500;
 
-  color: #4696ff;
+  color: #4097ff;
 `;
 
 export const ReasonContainer = styled.div`
@@ -61,13 +61,13 @@ export const ReasonButton = styled.button`
   height: 80px;
 
   border: ${({ $active }) =>
-    $active ? "1.5px solid #4696ff" : "1.5px solid transparent"};
+    $active ? "1.5px solid #4097FF" : "1.5px solid transparent"};
 
   border-radius: 20px;
 
-  background: ${({ $active }) => ($active ? "#e2efff" : "#f1f3f5")};
+  background: ${({ $active }) => ($active ? "#e2efff" : "#F1F4F7")};
 
-  color: ${({ $active }) => ($active ? "#4696ff" : "#111")};
+  color: ${({ $active }) => ($active ? "#4097FF" : "#0A0A0B")};
 
   font-size: 18px;
   font-weight: 500;
@@ -99,7 +99,7 @@ export const CancelButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    color: #4696ff;
+    color: #4097ff;
   }
 `;
 
@@ -110,7 +110,7 @@ export const NextButton = styled.button`
   border: 0;
   border-radius: 16px;
 
-  background: ${({ disabled }) => (disabled ? "#B3D5FF" : "#4696ff")};
+  background: ${({ disabled }) => (disabled ? "#B3D5FF" : "#4097ff")};
 
   color: #fff;
 
@@ -127,7 +127,7 @@ export const NextButton = styled.button`
 export const MenuList = styled.div`
   overflow: hidden;
 
-  background: #f1f3f5;
+  background: #f1f4f7;
   border-radius: 20px;
 `;
 
@@ -154,7 +154,7 @@ export const MenuName = styled.span`
   font-size: 18px;
   font-weight: 500;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const CheckBox = styled.div`
@@ -166,11 +166,11 @@ export const CheckBox = styled.div`
   justify-content: center;
 
   border: ${({ $active }) =>
-    $active ? "1px solid #4696ff" : "1px solid #cfd3d8"};
+    $active ? "1px solid #4097ff" : "1px solid #D0D1D2"};
 
   border-radius: 7px;
 
-  background: ${({ $active }) => ($active ? "#4696ff" : "#fff")};
+  background: ${({ $active }) => ($active ? "#4097ff" : "#fff")};
 
   color: #fff;
 

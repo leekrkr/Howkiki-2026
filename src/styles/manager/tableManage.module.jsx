@@ -6,7 +6,7 @@ export const Container = styled.section`
 
   display: flex;
 
-  background: #f1f4f8;
+  background: #f1f4f7;
 `;
 
 export const MainContainer = styled.main`
@@ -28,7 +28,7 @@ export const Title = styled.h2`
   font-size: 30px;
   font-weight: 600;
 
-  color: #111;
+  color: #0a0a0b;
 `;
 
 export const TableMap = styled.div`
@@ -68,7 +68,7 @@ export const Chair = styled.div`
 
   border-radius: 999px;
 
-  background: ${({ $active }) => ($active ? "#C9E1FF" : "#DDE1E5")};
+  background: ${({ $active }) => ($active ? "#c9e1ff" : "#e0e3e6")};
 `;
 
 export const TableBox = styled.div`
@@ -85,7 +85,7 @@ export const TableBox = styled.div`
   background: #fff;
 
   border: ${({ $active }) =>
-    $active ? "1.5px solid #4696FF" : "1.5px solid transparent"};
+    $active ? "1.5px solid #4097FF" : "1.5px solid transparent"};
 
   border-radius: 34px;
 
@@ -93,17 +93,17 @@ export const TableBox = styled.div`
 `;
 
 export const TableName = styled.div`
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
 
-  color: ${({ $active }) => ($active ? "#4696FF" : "#999")};
+  color: ${({ $active }) => ($active ? "#4097FF" : "#a2a3a5")};
 `;
 
 export const OrderNumber = styled.div`
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
 
-  color: #4696ff;
+  color: #4097ff;
 
   text-decoration: underline;
 `;
