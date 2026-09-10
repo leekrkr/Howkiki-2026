@@ -151,8 +151,7 @@ export const CancelButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    border: 0;
-    background: #e8e8e9;
+    color: #4696ff;
   }
 `;
 
