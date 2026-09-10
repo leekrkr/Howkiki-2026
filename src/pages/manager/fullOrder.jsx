@@ -79,16 +79,22 @@ export default function FullOrderPage() {
 
   // 최신순 / 오래된순 정렬
   const sortedOrders = orderData?.data
-    ? [...orderData.data].sort((a, b) => {
-        const aTime = new Date(a.createdAt).getTime();
-        const bTime = new Date(b.createdAt).getTime();
+    ? [...orderData.data]
+        .filter(
+          (order) =>
+            !order.isTakeOut &&
+            (order.status === "SERVED" || order.status === "COMPLETED"),
+        )
+        .sort((a, b) => {
+          const aTime = new Date(a.createdAt).getTime();
+          const bTime = new Date(b.createdAt).getTime();
 
-        if (sortType === "최신순") {
-          return bTime - aTime;
-        }
+          if (sortType === "최신순") {
+            return bTime - aTime;
+          }
 
-        return aTime - bTime;
-      })
+          return aTime - bTime;
+        })
     : [];
 
   useEffect(() => {
