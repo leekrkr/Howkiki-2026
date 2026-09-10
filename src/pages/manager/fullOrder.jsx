@@ -119,6 +119,7 @@ export default function FullOrderPage() {
                   <OrderCard
                     key={order.orderId}
                     order={order}
+                    showDate
                     onCardClick={() => handleOpenDetailModal(order)}
                   />
                 ))

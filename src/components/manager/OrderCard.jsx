@@ -11,6 +11,7 @@ import {
   BtnContainer,
   OrderCancelBtn,
   OrderOkBtn,
+  OrderDate,
 } from "../../styles/manager/order.module";
 
 export default function OrderCard({
@@ -19,8 +20,22 @@ export default function OrderCard({
   onCardClick,
   onCancel,
   onRightClick,
+  showDate = false,
 }) {
   const hasButtons = onCancel || onRightClick;
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    const hour = String(date.getHours()).padStart(2, "0");
+    const minute = String(date.getMinutes()).padStart(2, "0");
+
+    return `${year}.${month}.${day} ${hour}:${minute}`;
+  };
 
   return (
     <OrderContent onClick={onCardClick}>
@@ -44,6 +59,9 @@ export default function OrderCard({
           <MoreOrders>+외 {order.orderDetail.length - 5}개</MoreOrders>
         )}
       </MenuContainer>
+      {showDate && order.createdAt && (
+        <OrderDate>{formatDate(order.createdAt)}</OrderDate>
+      )}
 
       {hasButtons && (
         <BtnContainer>

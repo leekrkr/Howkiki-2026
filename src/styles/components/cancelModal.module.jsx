@@ -87,16 +87,21 @@ export const CancelButton = styled.button`
   width: 124px;
   height: 54px;
 
-  border: 0;
+  border: 1px solid #d0d1d2;
   border-radius: 16px;
 
-  background: #e5e7eb;
-  color: #777;
+  background: #fff;
+  color: #6c6e71;
 
   font-size: 17px;
   font-weight: 500;
 
   cursor: pointer;
+
+  &:hover {
+    border: 0;
+    background: #e8e8e9;
+  }
 `;
 
 export const NextButton = styled.button`
@@ -106,14 +111,18 @@ export const NextButton = styled.button`
   border: 0;
   border-radius: 16px;
 
-  background: ${({ disabled }) => (disabled ? "#e5e7eb" : "#4696ff")};
+  background: ${({ disabled }) => (disabled ? "#B3D5FF" : "#4696ff")};
 
-  color: ${({ disabled }) => (disabled ? "#aaa" : "#fff")};
+  color: #fff;
 
   font-size: 17px;
   font-weight: 500;
 
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+
+  &:not(:disabled):hover {
+    background: #3489f5;
+  }
 `;
 
 export const MenuList = styled.div`

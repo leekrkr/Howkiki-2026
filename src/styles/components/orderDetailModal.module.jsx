@@ -110,11 +110,11 @@ export const CloseButton = styled.button`
 
   margin: auto auto 0;
 
-  border: 0;
+  border: 1px solid #d0d1d2;
   border-radius: 16px;
 
-  background: #e5e7eb;
-  color: #777;
+  background: #fff;
+  color: #6c6e71;
 
   font-size: 17px;
   font-weight: 500;
@@ -122,6 +122,7 @@ export const CloseButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: #d9dce0;
+    border: 0;
+    background: #e8e8e9;
   }
 `;

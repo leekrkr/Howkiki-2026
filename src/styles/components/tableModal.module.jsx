@@ -149,16 +149,21 @@ export const CloseButton = styled.button`
   width: 124px;
   height: 54px;
 
-  border: 0;
+  border: 1px solid #d0d1d2;
   border-radius: 16px;
 
-  background: #e5e7eb;
-  color: #777;
+  background: #fff;
+  color: #6c6e71;
 
   font-size: 17px;
   font-weight: 500;
 
   cursor: pointer;
+
+  &:hover {
+    border: 0;
+    background: #e8e8e9;
+  }
 `;
 
 export const CompleteButton = styled.button`
@@ -175,4 +180,8 @@ export const CompleteButton = styled.button`
   font-weight: 500;
 
   cursor: pointer;
+
+  &:hover {
+    background: #3489f5;
+  }
 `;

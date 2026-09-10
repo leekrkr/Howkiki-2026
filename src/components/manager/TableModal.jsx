@@ -64,7 +64,9 @@ export default function TableOrderModal({
         </TotalContainer>
         <ButtonContainer>
           <CloseButton onClick={onClose}>닫기</CloseButton>
-          <CompleteButton onClick={onComplete}>완료</CompleteButton>
+          {hasOrders && (
+            <CompleteButton onClick={onComplete}>완료</CompleteButton>
+          )}
         </ButtonContainer>
       </ModalContainer>
     </Overlay>

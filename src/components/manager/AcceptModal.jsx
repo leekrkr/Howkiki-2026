@@ -7,7 +7,9 @@ import {
   TableNumber,
   TimeContainer,
   TimeButton,
+  TimeInputBox,
   TimeInput,
+  TimeUnit,
   ButtonContainer,
   CancelButton,
   CompleteButton,
@@ -82,13 +84,16 @@ export default function AcceptModal({ tableNumber, onClose, onConfirm }) {
             </TimeButton>
           </TimeContainer>
         ) : (
-          <TimeInput
-            type="number"
-            value={customTime}
-            onChange={(e) => setCustomTime(e.target.value)}
-            min="1"
-            autoFocus
-          />
+          <TimeInputBox>
+            <TimeInput
+              type="number"
+              value={customTime}
+              onChange={(e) => setCustomTime(e.target.value)}
+              min="1"
+              autoFocus
+            />
+            <TimeUnit>분</TimeUnit>
+          </TimeInputBox>
         )}
         <ButtonContainer>
           <CancelButton onClick={step === 1 ? onClose : handleBack}>

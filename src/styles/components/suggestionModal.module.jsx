@@ -71,10 +71,11 @@ export const CloseButton = styled.button`
 
   margin-top: 36px;
 
-  border: 0;
+  border: 1px solid #d0d1d2;
   border-radius: 16px;
 
-  background: #e5e7eb;
+  background: #fff;
+  color: #6c6e71;
 
   color: #777;
 
@@ -84,6 +85,7 @@ export const CloseButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: #dfe1e4;
+    border: 0;
+    background: #e8e8e9;
   }
 `;

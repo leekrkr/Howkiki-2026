@@ -223,6 +223,17 @@ export const OrderNumber = styled.div`
   color: #777;
 `;
 
+export const OrderDate = styled.div`
+  position: absolute;
+  right: 26px;
+  bottom: 22px;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #999;
+`;
+
 /* =========================
    메뉴
 ========================= */
