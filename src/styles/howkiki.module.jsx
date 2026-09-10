@@ -35,19 +35,20 @@ export const Logo = styled.img`
 export const Title = styled.h1`
   margin: 0;
 
-  color: #3d91ff;
+  color: #4097ff;
 
   font-size: clamp(26px, 2vw, 32px);
-  font-weight: 500;
+  font-weight: 400;
+  font-family: "LEXEND", sans-serif;
   line-height: 1.2;
 `;
 
 export const Description = styled.p`
   margin: 20px 0 0;
 
-  color: #777777;
+  color: #6c6e71;
 
-  font-size: clamp(14px, 1vw, 16px);
+  font-size: clamp(15px, 1vw, 17px);
   font-weight: 400;
   line-height: 1.6;
 `;
@@ -66,14 +67,14 @@ export const ModeButton = styled.button`
   width: 100%;
   height: clamp(54px, 4vw, 62px);
 
-  border: 1px solid #d5d5d5;
+  border: 1px solid #d0d1d2;
   border-radius: 18px;
 
   background: #ffffff;
-  color: #37383a;
+  color: #0a0a0b;
 
   font-family: inherit;
-  font-size: clamp(15px, 1vw, 17px);
+  font-size: clamp(16px, 1vw, 18px);
   font-weight: 500;
 
   cursor: pointer;
