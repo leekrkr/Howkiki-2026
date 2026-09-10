@@ -63,12 +63,12 @@ export const ChairRow = styled.div`
 `;
 
 export const Chair = styled.div`
-  width: 82px;
+  width: 70px;
   height: 26px;
 
   border-radius: 999px;
 
-  background: ${({ $active }) => ($active ? "#A9D0FF" : "#DDE1E5")};
+  background: ${({ $active }) => ($active ? "#C9E1FF" : "#DDE1E5")};
 `;
 
 export const TableBox = styled.div`

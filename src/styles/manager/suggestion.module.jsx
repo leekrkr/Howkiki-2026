@@ -32,7 +32,7 @@ export const Title = styled.h2`
   color: #111;
 `;
 
-export const FilterRow = styled.div`
+export const ArrayRow = styled.div`
   width: 100%;
 
   display: flex;
@@ -42,14 +42,14 @@ export const FilterRow = styled.div`
   margin-bottom: 26px;
 `;
 
-export const FilterContainer = styled.div`
+export const ArrayContainer = styled.div`
   display: flex;
   align-items: center;
 
   gap: 10px;
 `;
 
-export const FilterButton = styled.button`
+export const ArrayButton = styled.button`
   height: 36px;
   padding: 0 14px;
 
@@ -74,6 +74,54 @@ export const FilterButton = styled.button`
     height: 12px;
 
     object-fit: contain;
+  }
+`;
+
+export const SortWrapper = styled.div`
+  position: relative;
+`;
+
+export const SortPopup = styled.div`
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+
+  width: 120px;
+  padding: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  background: #fff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  z-index: 10;
+`;
+
+export const SortOption = styled.button`
+  width: 100%;
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: ${({ $selected }) => ($selected ? "#f1f4f7" : "#fff")};
+
+  font-size: 14px;
+  font-weight: ${({ $selected }) => ($selected ? 600 : 400)};
+  text-align: left;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #f1f4f7;
   }
 `;
 

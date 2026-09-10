@@ -149,6 +149,54 @@ export const ArrowButton = styled.button`
   cursor: pointer;
 `;
 
+export const SortWrapper = styled.div`
+  position: relative;
+`;
+
+export const SortPopup = styled.div`
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+
+  width: 120px;
+  padding: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  background: #fff;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  z-index: 10;
+`;
+
+export const SortOption = styled.button`
+  width: 100%;
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: ${({ $selected }) => ($selected ? "#f1f4f7" : "#fff")};
+
+  font-size: 14px;
+  font-weight: ${({ $selected }) => ($selected ? 600 : 400)};
+  text-align: left;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #f1f4f7;
+  }
+`;
+
 /* =========================
    주문 카드 목록
 ========================= */

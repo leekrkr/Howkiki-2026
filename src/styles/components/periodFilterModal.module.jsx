@@ -197,6 +197,11 @@ export const ResetButton = styled.button`
   color: #555;
 
   cursor: pointer;
+
+  &:hover {
+    border: 0;
+    background: #e8e8e9;
+  }
 `;
 
 export const SearchButton = styled.button`
@@ -206,7 +211,7 @@ export const SearchButton = styled.button`
   border: none;
   border-radius: 18px;
 
-  background: ${({ disabled }) => (disabled ? "#d1d3d6" : "#4097ff")};
+  background: ${({ disabled }) => (disabled ? "#B3D5FF" : "#4097ff")};
 
   font-size: 18px;
   font-weight: 500;
@@ -214,4 +219,8 @@ export const SearchButton = styled.button`
   color: #fff;
 
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+
+  &:not(:disabled):hover {
+    background: #3489f5;
+  }
 `;

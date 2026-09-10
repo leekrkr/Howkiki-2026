@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import SideBar from "../../components/manager/SideBar";
 import Header from "../../components/manager/Header";
 import SuggestionModal from "../../components/manager/SuggestionModal";
@@ -13,9 +13,12 @@ import {
   Title,
   MainContainer,
   ListContainer,
-  FilterRow,
-  FilterContainer,
-  FilterButton,
+  ArrayRow,
+  ArrayContainer,
+  ArrayButton,
+  SortWrapper,
+  SortPopup,
+  SortOption,
   PageArrowContainer,
   ArrowButton,
   SuggestionContainer,
@@ -25,8 +28,11 @@ import {
 } from "../../styles/manager/suggestion.module";
 
 export default function SuggestionPage() {
+  const sortRef = useRef(null);
   const [selectedSuggestion, setSelectedSuggestion] = useState(null);
   const [isPeriodOpen, setIsPeriodOpen] = useState(false);
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  const [sortType, setSortType] = useState("최신순");
 
   const {
     isOpen: isSuggestionModalOpen,
@@ -44,6 +50,22 @@ export default function SuggestionPage() {
     closeSuggestionModal();
   };
 
+  const handleSortSelect = (type) => {
+    setSortType(type);
+    setIsSortOpen(false);
+  };
+
+  const sortedSuggestions = [...mockSuggestions.data].sort((a, b) => {
+    const aTime = new Date(a.createdAt).getTime();
+    const bTime = new Date(b.createdAt).getTime();
+
+    if (sortType === "최신순") {
+      return bTime - aTime;
+    }
+
+    return aTime - bTime;
+  });
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
 
@@ -52,49 +74,73 @@ export default function SuggestionPage() {
     }월 ${date.getDate()}일`;
   };
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (sortRef.current && !sortRef.current.contains(e.target)) {
+        setIsSortOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <Container>
         <SideBar />
-
         <MainContainer>
           <Header />
-
           <ListContainer>
             <Title>건의 사항</Title>
-
-            <FilterRow>
-              <FilterContainer>
-                <FilterButton onClick={() => setIsPeriodOpen(true)}>
+            <ArrayRow>
+              <ArrayContainer>
+                <ArrayButton onClick={() => setIsPeriodOpen(true)}>
                   기간
                   <img src={arrowDownIcon} alt="" />
-                </FilterButton>
-
-                <FilterButton>
-                  최신순
-                  <img src={arrowDownIcon} alt="" />
-                </FilterButton>
-              </FilterContainer>
-
+                </ArrayButton>
+                <SortWrapper ref={sortRef}>
+                  <ArrayButton onClick={() => setIsSortOpen((prev) => !prev)}>
+                    {sortType}
+                    <img src={arrowDownIcon} alt="" />
+                  </ArrayButton>
+                  {isSortOpen && (
+                    <SortPopup>
+                      <SortOption
+                        $selected={sortType === "최신순"}
+                        onClick={() => handleSortSelect("최신순")}
+                      >
+                        최신순
+                      </SortOption>
+                      <SortOption
+                        $selected={sortType === "오래된순"}
+                        onClick={() => handleSortSelect("오래된순")}
+                      >
+                        오래된순
+                      </SortOption>
+                    </SortPopup>
+                  )}
+                </SortWrapper>
+              </ArrayContainer>
               <PageArrowContainer>
                 <ArrowButton>
                   <img src={arrowIcon1} alt="이전" />
                 </ArrowButton>
-
                 <ArrowButton>
                   <img src={arrowIcon2} alt="다음" />
                 </ArrowButton>
               </PageArrowContainer>
-            </FilterRow>
-
+            </ArrayRow>
             <SuggestionContainer>
-              {mockSuggestions.data.map((suggestion) => (
+              {sortedSuggestions.map((suggestion) => (
                 <SuggestionContent
                   key={suggestion.suggestionId}
                   onClick={() => handleOpenSuggestionModal(suggestion)}
                 >
                   <SuggestionText>{suggestion.content}</SuggestionText>
-
                   <SuggestionDate>
                     {formatDate(suggestion.createdAt)}
                   </SuggestionDate>
@@ -104,7 +150,6 @@ export default function SuggestionPage() {
           </ListContainer>
         </MainContainer>
       </Container>
-
       {isSuggestionModalOpen && selectedSuggestion && (
         <SuggestionModal
           suggestion={selectedSuggestion}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import useModal from "../../hooks/useModal";
 import OrderDetailModal from "../../components/manager/OrderDetailModal";
 import PeriodFilterModal from "../../components/manager/PeriodFilterModal";
@@ -20,6 +20,9 @@ import {
   ArrowContainer,
   ArrayContainer,
   ArrayButton,
+  SortWrapper,
+  SortPopup,
+  SortOption,
   PageArrowContainer,
   ArrowButton,
   OrderContainer,
@@ -27,10 +30,13 @@ import {
 } from "../../styles/manager/order.module";
 
 export default function FullOrderPage() {
+  const sortRef = useRef(null);
   const [orderData, setOrderData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isPeriodOpen, setIsPeriodOpen] = useState(false);
   const [detailOrder, setDetailOrder] = useState(null);
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  const [sortType, setSortType] = useState("최신순");
 
   const {
     isOpen: isDetailOpen,
@@ -38,22 +44,28 @@ export default function FullOrderPage() {
     closeModal: closeDetailModal,
   } = useModal();
 
+  const handleSortSelect = (type) => {
+    setSortType(type);
+    setIsSortOpen(false);
+  };
+
+  const handleOpenDetailModal = (order) => {
+    setDetailOrder(order);
+    openDetailModal();
+  };
+
+  const handleCloseDetailModal = () => {
+    setDetailOrder(null);
+    closeDetailModal();
+  };
+
   const fetchOrderData = async () => {
     try {
+      setIsLoading(true);
+
       await new Promise((resolve) => setTimeout(resolve, 500));
 
-      const sortedOrders = [...mockOrders.data]
-        .filter(
-          (order) =>
-            ["SERVED", "COMPLETED"].includes(order.status) &&
-            order.isTakeOut === false,
-        )
-        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-
-      setOrderData({
-        ...mockOrders,
-        data: sortedOrders,
-      });
+      setOrderData(mockOrders);
     } catch (error) {
       console.error("주문 데이터 가져오기 실패:", error);
     } finally {
@@ -65,15 +77,33 @@ export default function FullOrderPage() {
     fetchOrderData();
   }, []);
 
-  const handleOpenDetailModal = (order) => {
-    setDetailOrder(order);
-    openDetailModal();
-  };
+  // 최신순 / 오래된순 정렬
+  const sortedOrders = orderData?.data
+    ? [...orderData.data].sort((a, b) => {
+        const aTime = new Date(a.createdAt).getTime();
+        const bTime = new Date(b.createdAt).getTime();
 
-  const handleCloseDetailModal = () => {
-    setDetailOrder(null);
-    closeDetailModal();
-  };
+        if (sortType === "최신순") {
+          return bTime - aTime;
+        }
+
+        return aTime - bTime;
+      })
+    : [];
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (sortRef.current && !sortRef.current.contains(e.target)) {
+        setIsSortOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -95,11 +125,31 @@ export default function FullOrderPage() {
               <ArrowContainer>
                 <ArrayContainer>
                   <ArrayButton onClick={() => setIsPeriodOpen(true)}>
-                    기간 <img src={arrowDownIcon} alt="" />
+                    기간
+                    <img src={arrowDownIcon} alt="" />
                   </ArrayButton>
-                  <ArrayButton>
-                    최신순 <img src={arrowDownIcon} alt="" />
-                  </ArrayButton>
+                  <SortWrapper ref={sortRef}>
+                    <ArrayButton onClick={() => setIsSortOpen((prev) => !prev)}>
+                      {sortType}
+                      <img src={arrowDownIcon} alt="" />
+                    </ArrayButton>
+                    {isSortOpen && (
+                      <SortPopup>
+                        <SortOption
+                          $selected={sortType === "최신순"}
+                          onClick={() => handleSortSelect("최신순")}
+                        >
+                          최신순
+                        </SortOption>
+                        <SortOption
+                          $selected={sortType === "오래된순"}
+                          onClick={() => handleSortSelect("오래된순")}
+                        >
+                          오래된순
+                        </SortOption>
+                      </SortPopup>
+                    )}
+                  </SortWrapper>
                 </ArrayContainer>
                 <PageArrowContainer>
                   <ArrowButton>
@@ -115,7 +165,7 @@ export default function FullOrderPage() {
               {isLoading ? (
                 <LoaderWrap>로딩중...</LoaderWrap>
               ) : (
-                orderData?.data.map((order) => (
+                sortedOrders.map((order) => (
                   <OrderCard
                     key={order.orderId}
                     order={order}
