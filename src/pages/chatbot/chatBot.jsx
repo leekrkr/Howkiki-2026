@@ -18,8 +18,8 @@ import {
   MessageTime,
   MenuImage,
   InputArea,
-  OrderButton,
-  OrderIcon,
+  OrderSummaryButton,
+  OrderSummaryIcon,
   InputBox,
   Input,
   SendButton,
@@ -70,9 +70,9 @@ export default function ChatBot() {
             </MessageGroup>
           </ChatArea>
           <InputArea>
-            <OrderButton onClick={handleOrderSummary}>
-              <OrderIcon src={orderSummaryIcon} alt="주문 내역" />
-            </OrderButton>
+            <OrderSummaryButton onClick={handleOrderSummary}>
+              <OrderSummaryIcon src={orderSummaryIcon} alt="주문 내역" />
+            </OrderSummaryButton>
             <InputBox>
               <Input placeholder="메시지를 입력해주세요" />
               <SendButton>

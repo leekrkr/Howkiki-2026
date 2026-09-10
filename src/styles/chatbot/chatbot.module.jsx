@@ -101,7 +101,7 @@ export const BotProfile = styled.div`
 `;
 
 export const LogoImage = styled.img`
-  width: 20px;
+  width: 18px;
   height: auto;
 `;
 
@@ -180,7 +180,7 @@ export const InputArea = styled.div`
   z-index: 100;
 `;
 
-export const OrderButton = styled.button`
+export const OrderSummaryButton = styled.button`
   width: 48px;
   height: 48px;
   flex-shrink: 0;
@@ -198,7 +198,7 @@ export const OrderButton = styled.button`
   cursor: pointer;
 `;
 
-export const OrderIcon = styled.img`
+export const OrderSummaryIcon = styled.img`
   width: 28px;
   height: 28px;
 `;
