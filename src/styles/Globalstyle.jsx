@@ -4,9 +4,25 @@ import SuitMedium from "../assets/fonts/SUIT-Medium.woff2";
 import SuitSemiBold from "../assets/fonts/SUIT-SemiBold.woff2";
 import SuitBold from "../assets/fonts/SUIT-Bold.woff2";
 import SuitExtraBold from "../assets/fonts/SUIT-ExtraBold.woff2";
+import LexendRegular from "../assets/fonts/Lexend-Regular.ttf";
+import LexendMedium from "../assets/fonts/Lexend-Medium.ttf";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+  @font-face {
+    font-family: "LEXEND";
+    src: url(${LexendRegular}) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "LEXEND";
+    src: url(${LexendMedium}) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
 
   @font-face {
     font-family: "SUIT";

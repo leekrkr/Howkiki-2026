@@ -35,7 +35,8 @@ export const LogoImage = styled.img`
 
 export const LogoText = styled.div`
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 400;
+  font-family: "LEXEND", sans-serif;
 
   color: #4097ff;
 `;

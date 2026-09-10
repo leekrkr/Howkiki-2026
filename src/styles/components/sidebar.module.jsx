@@ -47,7 +47,9 @@ export const LogoCircle = styled.div`
 
 export const LogoText = styled.div`
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 400;
+  font-family: "LEXEND", sans-serif;
+
   color: #0a0a0b;
 `;
 
