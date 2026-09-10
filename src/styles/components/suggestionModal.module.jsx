@@ -16,7 +16,7 @@ export const ModalContainer = styled.div`
   width: 820px;
   height: 460px;
 
-  padding: 36px;
+  padding: 36px 36px 32px;
 
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ export const CloseButton = styled.button`
   width: 124px;
   height: 54px;
 
-  margin-top: 36px;
+  margin-top: 40px;
 
   border: 1px solid #d0d1d2;
   border-radius: 16px;

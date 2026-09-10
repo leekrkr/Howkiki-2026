@@ -17,7 +17,7 @@ export const ModalContainer = styled.div`
   width: 640px;
   height: 483px;
 
-  padding: 48px 54px 36px;
+  padding: 48px 54px 28px;
 
   display: flex;
   flex-direction: column;

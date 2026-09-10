@@ -15,7 +15,7 @@ export const Overlay = styled.div`
 export const ModalContainer = styled.div`
   width: 640px;
   min-height: 480px;
-  padding: 48px 54px 36px;
+  padding: 48px 54px 28px;
 
   display: flex;
   flex-direction: column;

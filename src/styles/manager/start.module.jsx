@@ -88,7 +88,7 @@ export const Input = styled.input`
   width: 100%;
   height: 60px;
 
-  padding: 0 26px;
+  padding: 0 20px;
 
   border: 1px solid transparent;
   border-radius: 14px;
