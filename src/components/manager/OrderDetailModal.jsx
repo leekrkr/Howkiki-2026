@@ -9,11 +9,16 @@ import {
   MenuItem,
   MenuName,
   MenuQuantity,
+  TotalContainer,
+  TotalLabel,
+  TotalPrice,
   CloseButton,
 } from "../../styles/components/orderDetailModal.module";
 
 export default function OrderDetailModal({ order, onClose }) {
   if (!order) return null;
+
+  const totalPrice = order.orderPrice || 0;
 
   return (
     <Overlay onClick={onClose}>
@@ -35,6 +40,10 @@ export default function OrderDetailModal({ order, onClose }) {
             </MenuItem>
           ))}
         </MenuList>
+        <TotalContainer>
+          <TotalLabel>총 주문 금액</TotalLabel>
+          <TotalPrice>{totalPrice.toLocaleString()}원</TotalPrice>
+        </TotalContainer>
         <CloseButton onClick={onClose}>닫기</CloseButton>
       </ModalContainer>
     </Overlay>

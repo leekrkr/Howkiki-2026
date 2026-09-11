@@ -15,7 +15,7 @@ export const Overlay = styled.div`
 export const ModalContainer = styled.div`
   width: 640px;
   min-height: 480px;
-  padding: 48px 54px 28px;
+  padding: 44px 54px 28px;
 
   display: flex;
   flex-direction: column;
@@ -27,11 +27,13 @@ export const ModalContainer = styled.div`
 export const ModalHeader = styled.div`
   width: 100%;
 
+  padding: 0px 8px 0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 `;
 
 export const OrderTitle = styled.div`
@@ -57,7 +59,7 @@ export const TableNumber = styled.span`
 export const MenuList = styled.div`
   width: 100%;
 
-  max-height: calc(88px * 3);
+  height: calc(84px * 3);
   overflow-y: auto;
 
   background: #f1f4f7;
@@ -74,33 +76,47 @@ export const MenuList = styled.div`
 export const MenuItem = styled.div`
   width: 100%;
 
-  height: 88px;
-  min-height: 88px;
+  height: 84px;
+  min-height: 84px;
 
   padding: 0 32px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   border-bottom: 1px solid #fff;
-
-  &:last-child {
-    border-bottom: none;
-  }
 `;
 
 export const MenuName = styled.span`
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   color: #0a0a0b;
 `;
 
 export const MenuQuantity = styled.span`
   font-size: 18px;
   font-weight: 400;
+  color: #0a0a0b;
+`;
+
+export const TotalContainer = styled.span`
+  padding: 16px 8px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const TotalLabel = styled.span`
+  font-size: 18px;
+  font-weight: 500;
+  color: #0a0a0b;
+`;
+
+export const TotalPrice = styled.span`
+  font-size: 18px;
+  font-weight: 500;
   color: #0a0a0b;
 `;
 

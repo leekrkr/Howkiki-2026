@@ -17,7 +17,7 @@ export const ModalContainer = styled.div`
   width: 640px;
   height: 483px;
 
-  padding: 48px 54px 28px;
+  padding: 44px 54px 28px;
 
   display: flex;
   flex-direction: column;
@@ -27,6 +27,8 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalHeader = styled.div`
+  padding: 0px 8px 0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
