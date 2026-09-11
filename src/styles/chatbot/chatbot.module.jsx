@@ -61,7 +61,7 @@ export const ChatArea = styled.div`
   flex: 1;
   min-height: 0;
 
-  padding: 0 16px 110px;
+  padding: 0 16px 70px;
 
   overflow-y: auto;
 

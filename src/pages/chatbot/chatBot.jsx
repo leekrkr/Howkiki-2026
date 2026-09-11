@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logoIcon from "../../assets/icons/logo.svg";
 import sendIcon from "../../assets/icons/send.svg";
@@ -28,10 +29,44 @@ import {
 
 export default function ChatBot() {
   const navigate = useNavigate();
+  const chatEndRef = useRef(null);
+  const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([]);
 
   const handleOrderSummary = () => {
     navigate("/ordersummary/1/1");
   };
+
+  const handleSend = () => {
+    if (!message.trim()) return;
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        text: message,
+        time: new Date().toLocaleTimeString("ko-KR", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        }),
+      },
+    ]);
+
+    setMessage("");
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.nativeEvent.isComposing) {
+      handleSend();
+    }
+  };
+
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, [messages]);
 
   return (
     <Page>
@@ -68,15 +103,31 @@ export default function ChatBot() {
               <MenuImage src={menuImage} alt="라구 짜장과 계란튀김" />
               <MessageTime>14:29</MessageTime>
             </MessageGroup>
+            {messages.map((item) => (
+              <MessageGroup $isUser key={item.id}>
+                <UserBubble>{item.text}</UserBubble>
+                <MessageTime $isUser>{item.time}</MessageTime>
+              </MessageGroup>
+            ))}
+            <div ref={chatEndRef} />
           </ChatArea>
           <InputArea>
             <OrderSummaryButton onClick={handleOrderSummary}>
               <OrderSummaryIcon src={orderSummaryIcon} alt="주문 내역" />
             </OrderSummaryButton>
             <InputBox>
-              <Input placeholder="메시지를 입력해주세요" />
-              <SendButton>
-                <SendIcon src={sendIcon} alt="HowKIKI" />
+              <Input
+                placeholder="메시지를 입력해주세요"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyDown={handleKeyDown}
+              />
+              <SendButton
+                onClick={handleSend}
+                disabled={!message.trim()}
+                $active={!!message.trim()}
+              >
+                <SendIcon src={sendIcon} alt="전송" />
               </SendButton>
             </InputBox>
           </InputArea>
