@@ -2,6 +2,8 @@ import { useState } from "react";
 import closeIcon from "../../assets/icons/close.svg";
 import calendarIcon from "../../assets/icons/calendar.svg";
 import calendarActiveIcon from "../../assets/icons/calendar-active.svg";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import {
   Overlay,
   Modal,
@@ -15,12 +17,14 @@ import {
   PeriodButton,
   DateRangeBox,
   DateItem,
+  DatePickerButton,
   DateIcon,
   DateText,
   RangeDivider,
   ModalFooter,
   ResetButton,
   SearchButton,
+  DatePickerWrapper,
 } from "../../styles/components/periodFilterModal.module";
 
 const formatDate = (date) => {
@@ -33,7 +37,7 @@ const formatDate = (date) => {
 
 export default function PeriodFilterModal({ isOpen, onClose, onSearch }) {
   const [selectedPeriod, setSelectedPeriod] = useState(null);
-  const [startDate, setStartDate] = useState("");
+  const [startDate, setStartDate] = useState(null);
 
   const today = new Date();
   const endDate = formatDate(today);
@@ -53,15 +57,14 @@ export default function PeriodFilterModal({ isOpen, onClose, onSearch }) {
     setSelectedPeriod(period);
 
     const date = new Date();
-
     date.setMonth(date.getMonth() - periodMonths[period]);
 
-    setStartDate(formatDate(date));
+    setStartDate(date);
   };
 
   const handleReset = () => {
     setSelectedPeriod(null);
-    setStartDate("");
+    setStartDate(null);
   };
 
   const handleSearch = () => {
@@ -69,7 +72,7 @@ export default function PeriodFilterModal({ isOpen, onClose, onSearch }) {
 
     onSearch?.({
       selectedPeriod,
-      startDate,
+      startDate: formatDate(startDate),
       endDate,
     });
   };
@@ -102,22 +105,37 @@ export default function PeriodFilterModal({ isOpen, onClose, onSearch }) {
             <SectionTitle>직접 선택</SectionTitle>
             <DateRangeBox $active={isDateSelected}>
               <DateItem>
-                <DateIcon>
-                  <img
-                    src={isDateSelected ? calendarActiveIcon : calendarIcon}
-                    alt=""
+                <DatePickerWrapper>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => {
+                      setStartDate(date);
+                      setSelectedPeriod(null);
+                    }}
+                    maxDate={today}
+                    dateFormat="yyyy.MM.dd"
+                    customInput={
+                      <DatePickerButton>
+                        <DateIcon>
+                          <img
+                            src={
+                              isDateSelected ? calendarActiveIcon : calendarIcon
+                            }
+                          />
+                        </DateIcon>
+                        <DateText as="span" $active={isDateSelected}>
+                          {startDate ? formatDate(startDate) : "시작일 선택"}
+                        </DateText>
+                      </DatePickerButton>
+                    }
                   />
-                </DateIcon>
-                <DateText $active={isDateSelected}>
-                  {startDate || "시작일 선택"}
-                </DateText>
+                </DatePickerWrapper>
               </DateItem>
               <RangeDivider>~</RangeDivider>
               <DateItem>
                 <DateIcon>
                   <img
                     src={isDateSelected ? calendarActiveIcon : calendarIcon}
-                    alt=""
                   />
                 </DateIcon>
                 <DateText $active={isDateSelected}>{endDate}</DateText>

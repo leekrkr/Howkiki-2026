@@ -140,9 +140,28 @@ export const DateRangeBox = styled.div`
 `;
 
 export const DateItem = styled.div`
+  position: relative;
+
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+
+  cursor: pointer;
+`;
+
+export const DatePickerButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  cursor: pointer;
 `;
 
 export const DateIcon = styled.span`
@@ -221,5 +240,23 @@ export const SearchButton = styled.button`
 
   &:not(:disabled):hover {
     background: #3489f5;
+  }
+`;
+
+export const DatePickerWrapper = styled.div`
+  .react-datepicker {
+    border: 1px solid #e3e3e3;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .react-datepicker__header {
+    background: #fff;
+    border-bottom: none;
+  }
+
+  .react-datepicker__day--selected {
+    background: #4097ff;
+    border-radius: 50%;
   }
 `;
