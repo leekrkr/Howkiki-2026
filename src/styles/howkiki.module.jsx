@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
+  position: relative;
+
   width: 100%;
   min-height: 100vh;
 
@@ -88,4 +90,18 @@ export const ModeButton = styled.button`
   @media (max-width: 480px) {
     border-radius: 14px;
   }
+`;
+
+export const ProjectNote = styled.p`
+  position: absolute;
+  right: 44px;
+  bottom: 32px;
+
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #777;
+  text-align: right;
 `;

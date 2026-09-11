@@ -7,6 +7,7 @@ import {
   Description,
   ButtonContainer,
   ModeButton,
+  ProjectNote,
 } from "../styles/howkiki.module";
 
 import logo from "../assets/icons/logo.svg";
@@ -31,6 +32,12 @@ export default function HowkikiPage() {
           <ModeButton onClick={() => navigate("/1")}>Manager Mode</ModeButton>
         </ButtonContainer>
       </Content>
+      <ProjectNote>
+        기존에 직접 디자인 및 프론트엔드 개발을 진행했던 프로젝트를 바탕으로,
+        <br />
+        UI/UX를 새롭게 개선하고 퍼블리싱했습니다. 현재 API 만료로 인해 실시간
+        채팅 및 알림 기능은 제한되어 있습니다.
+      </ProjectNote>
     </Container>
   );
 }
