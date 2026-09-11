@@ -31,7 +31,10 @@ export default function ChatBot() {
   const navigate = useNavigate();
   const chatEndRef = useRef(null);
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(() => {
+    const saved = localStorage.getItem("chatMessages");
+    return saved ? JSON.parse(saved) : [];
+  });
 
   const handleOrderSummary = () => {
     navigate("/ordersummary/1/1");
@@ -61,6 +64,10 @@ export default function ChatBot() {
       handleSend();
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem("chatMessages", JSON.stringify(messages));
+  }, [messages]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({
