@@ -94,8 +94,8 @@ export const ModeButton = styled.button`
 
 export const ProjectNote = styled.p`
   position: absolute;
-  right: 44px;
-  bottom: 32px;
+  left: 40px;
+  bottom: 30px;
 
   margin: 0;
 
@@ -103,5 +103,5 @@ export const ProjectNote = styled.p`
   font-weight: 300;
   line-height: 1.6;
   color: #777;
-  text-align: right;
+  text-align: left;
 `;
