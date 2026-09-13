@@ -11,7 +11,6 @@ export const Container = styled.main`
   align-items: center;
 
   padding: 40px 24px;
-  box-sizing: border-box;
 
   background: #ffffff;
 `;
@@ -94,14 +93,87 @@ export const ModeButton = styled.button`
 
 export const ProjectNote = styled.p`
   position: absolute;
-  left: 40px;
-  bottom: 30px;
+  left: 36px;
+  bottom: 28px;
 
   margin: 0;
 
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 300;
   line-height: 1.6;
   color: #777;
   text-align: left;
+`;
+
+export const GithubButton = styled.a`
+  position: absolute;
+  top: 30px;
+  right: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 10px 16px;
+
+  border: 1px solid #d0d1d2;
+  border-radius: 12px;
+
+  background: #fff;
+  color: #6c6e71;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #e2efff;
+    border-color: #4097ff;
+    color: #4097ff;
+  }
+
+  &:hover img:first-child {
+    opacity: 0;
+  }
+
+  &:hover img:last-child {
+    opacity: 1;
+  }
+
+  @media (max-width: 480px) {
+    top: 20px;
+    right: 20px;
+
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+`;
+
+export const GithubArrowWrapper = styled.div`
+  position: relative;
+
+  width: 16px;
+  height: 16px;
+`;
+
+export const GithubArrowIcon = styled.img`
+  position: absolute;
+  inset: 0;
+
+  width: 16px;
+  height: 16px;
+
+  opacity: 1;
+`;
+
+export const GithubArrowActiveIcon = styled.img`
+  position: absolute;
+  inset: 0;
+
+  width: 16px;
+  height: 16px;
+
+  opacity: 0;
 `;

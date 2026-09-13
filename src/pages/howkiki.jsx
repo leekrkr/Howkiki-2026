@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import GithubArrow from "../assets/icons/arrow.svg";
+import GithubActiveArrow from "../assets/icons/arrow-active.svg";
 import {
   Container,
   Content,
@@ -8,6 +10,10 @@ import {
   ButtonContainer,
   ModeButton,
   ProjectNote,
+  GithubButton,
+  GithubArrowWrapper,
+  GithubArrowIcon,
+  GithubArrowActiveIcon,
 } from "../styles/howkiki.module";
 
 import logo from "../assets/icons/logo.svg";
@@ -17,6 +23,17 @@ export default function HowkikiPage() {
 
   return (
     <Container>
+      <GithubButton
+        href="https://github.com/leekrkr/Howkiki-2026"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+        <GithubArrowWrapper>
+          <GithubArrowIcon src={GithubArrow} alt="" />
+          <GithubArrowActiveIcon src={GithubActiveArrow} alt="" />
+        </GithubArrowWrapper>
+      </GithubButton>
       <Content>
         <Logo src={logo} alt="HowKIKI Logo" />
         <Title>HowKIKI</Title>
